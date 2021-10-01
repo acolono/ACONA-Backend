@@ -15,10 +15,60 @@ See Thunder documentation [install documentation](https://thunder.github.io/thun
 3. Enable the following theme
 - ACONA
 
+## Features
+This package installs Thunder with some more contrib modules and ACONA specific features.
+
+Contrib modules:
+- drupal/group
+- drupal/password_field
+- drupal/restui
+- drupal/views_bulk_edit
+- drupal/entity_reference_actions
+
+
+ao/acona_configuration: This is the ACONA Configuration Suite that provides the following:
+- Metric Contentype
+- PageType Contenttype
+- URL Contenttype
+- Service Contenttype
+- Variable Types Vocabulary
+- Services Vocabulary
+- Units Vocabulary
+- Domain Group
+- Variable Priority Paragraph
+
+ao/acona is the Drupal theme that is based on Olivero.
+
 ## Usage
 
+First you need to create a user. When done you can set up a domain (group) and configure it:
 
-# How to use
+![Adding domain](https://github.com/acolono/ACONA-Backend/blob/main/documentation/acona-backend_adding-domain.png)
+
+![Configure a domain](https://github.com/acolono/ACONA-Backend/blob/main/documentation/acona-backend_domain-settings.png)
+
+1. Activate a Data Source (Service)
+In the next step you need to activate the data source or service.
+You can use data from your Matomo instance or Google Search Api (at the moment only Matomo is active, but it will be expanded shortly). 
+Click on button "Create new Data Source" to add your Source.
+For this you need to add a title and select service type in a dropdown.
+For authentication you want to add an API Key / Auth token for e.g. Matomo and save. 
+
+2. Create and set up your Page Types
+Set up page types with its specific Success Scores. For example you can create a page called "landing page" for which a combination of Organic Clicks and a low Bounce Rate defines the Success Score.
+
+You need to add a title and select a variable, variable type and relevance. 
+Selecting a correct variable type is important to calculate a meaningful success value between 0 and 100. If it happens that one of your variables is once greater as defined here, its okay - it can just happen that your success value is greater than 100 then.
+Select the variable relevance from 1-100. The sum of all variables should be 100. 
+You can add up to three variables for every page type. Just click on the "Add variable priority" button at the bottom. 
+
+![Configure a Page Type](https://github.com/acolono/ACONA-Backend/blob/main/documentation/acona-backend_create-pagetype.png)
+
+3. Set up URLs to be analyzed
+At the moment you can select up to 5 URLs that should be analyzed. This will be expanded in the future and it will be possible to also analyze the whole domain.
+Write a title and add an exact full URL such as https://example.com. Select a page type, e.g. "landing page", "product page" etc. You can also save some internal notes.
+
+# More infos for developers
 ## What does the template do?
 
 When installing the given `composer.json` some tasks are taken care of:
