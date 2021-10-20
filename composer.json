@@ -28,7 +28,7 @@
         }
     ],
     "require": {
-        "ao/acona": "dev-master",
+        "ao/acona_theme": "dev-master",
         "ao/acona_configuration": "dev-main",
         "composer/installers": "^1.2",
         "drupal/core-composer-scaffold": "^9",
